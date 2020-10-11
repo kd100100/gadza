@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename= 'imgs/icon.png')}}">
+	
+	<!-- Bootstrap CDNs -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- External Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/index.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/nav.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/login.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/scroll.css')}}">
+
+    <!-- External Javascript File -->
+    <script src="{{ url_for('static',filename= 'js/index.js')}}"></script>
+    
+
+
+</head>
+<body>
+    <!--Checking is registration is done-->
+    <!-- Navbar -->
+    {% if IsWrong == "1" %}
+    <script>
+        alert("Incorrect Phone number/Password");
+    </script>
+    {% endif %}
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{{ url_for('home')}}">
+                <img src="{{ url_for('static',filename= 'imgs/icon.png')}}" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;Gazda
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link aaa" href="http://localhost:5000/Predictor" >Rain Predictor</a>
+                    </li>
+                    <li class="nav-item login_button">
+                    <a class="nav-link" href="#" onclick="open_login()"><button class="login_btn">Login</button></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login -->
+    <div class="loginbg" id="login_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4 loginbox" id="login_box"> 
+                    <h1 class="logintitle">Login</h1>
+                    <button class="loginclse" onclick="close_login()"><i class="fa fa-close"></i></button>
+                    <hr>
+                    <form method="POST">
+                    <label for="fname" class="logintxt">Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select  id="inputGroupSelect01" class="logininput" name="inputGroupSelect01">
+                        <option value="1" selected>Retailer</option>
+                        <option value="2">Farmer</option>
+                    </select>
+                    <label for="phone" class="logintxt">Mobile Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" class="logininput" pattern="[0-9]{10}" required> 
+                    <label for="pwd" class="logintxt">Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="password" id="pwd" name="pwd" minlength="8" placeholder="********" class="logininput"> 
+                        <input type="submit" class="btn btn-success" value="Log In">
+                    </form>
+                </div>        
+                <div class="col-lg-4"></div> 
+            </div> 
+        </div>
+    </div>
+
+    
+    <div class="scrollbar scrollbar-primary">
+        <div class="force-overflow">
+    
+    <!-- Main Content -->
+    <div class="contentbg">
+    <div class="container">
+        <div class="row content">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4">
+                <h1 class="title">Gazda</h1>
+                <p class="tagline">Adding Green to your Life!</p>
+                <button type="button" onclick="open_login()" class="col-lg-4 btn">Log In</button>
+                <a href="/signup"><button type="button" class="col-lg-4 btn">Sign Up</button></a>
+            </div>
+        </div>
+    </div> 
+    </div>
+
+    <!-- About -->
+    <div class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="atitle">About Us</h1>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4">
+                <img src="{{ url_for('static',filename= 'imgs/ar.jpg')}}" class="founderimg" alt="N Aravind">
+            </div>
+            <div class="col-lg-6">
+                <p class="foundertxt">Agriculture is the backbone of the Indian Economy"- said Mahatma Gandhi, 6 decades ago. Agriculture Sector contributes 6.4 percent of total world's economic production. With 1.3 billion people employed in the sector, agriculture is the second greatest source of employment worldwide after services and it accounts 28% of global employment. One of the most important component in agriculture is trading. <br>
+                To make it easy, secure, and healthy, Gazda is formed. Gazda is an online platform for exchange of agricultural produce from Farmers to Retailers. Gazda helps in discovering better prices and provides facilities for smooth marketing of their produce. Gazda also is targeting the elimination of middlemen so that farmers can also get a better deal for themselves by selling fruits and vegetables directly to wholesalers and retailers.</p>
+                <h4>N Aravind</h4>
+                <h5>Founder - Gazda</h5>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Team -->
+    <div class="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <img src="{{ url_for('static',filename= 'imgs/kd.png')}}" class="cofounder" alt="Keerthivasan D">
+            </div>
+            <div class="col-lg-5">
+                <img src="{{ url_for('static',filename= 'imgs/hp.png')}}" class="cofounder" alt="Harshith P">
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+                <img src="{{ url_for('static',filename= 'imgs/dm.png')}}" class="cofounder" alt="D Manoah">
+            </div>
+            <div class="col-lg-5">
+                <img src="{{ url_for('static',filename= 'imgs/jp.png')}}" class="cofounder" alt="S Jai Prakash">
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Quality -->
+    <div class="container quality">
+        <div class="row">
+
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contactbg">
+    <div class="container">
+        <div class="row contact">
+            <div class="col-lg-4 branding">
+                <img src="{{ url_for('static',filename= 'imgs/icon.png')}}" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;Gazda
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <p class="find">Find us at:</p>
+                <p class="address">
+                    #123, XYZ Street, ABC Colony, <br>Madhurovoyal, Chennai, <br>Tamilnadu, India <br>Pincode: 600094
+                </p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <p class="find">Contact us at:</p>
+                <p class="address">
+                    Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                    Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+</body>
+</html>

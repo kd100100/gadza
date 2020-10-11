@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Name }}</title>
+
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static',filename= 'imgs/icon.png')}}">
+	
+	<!-- Bootstrap CDNs -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- External Style Sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/farmer.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/login.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'css/nav.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'css/scroll.css')}}">
+
+    <!-- External Javascript File -->
+    <script src="{{ url_for('static',filename= 'js/farmer.js')}}"></script>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container navnav">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static',filename= 'imgs/icon.png')}}" width="30" height="35" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;Gazda
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link aaa" href="http://localhost:5000/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Welcome {{ Name }}</a>
+                    </li>
+                    <li class="nav-item login_button">
+                    <a class="nav-link" href="http://localhost:5000/"><button class="login_btn">Log Out</button></a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Detailed Listing -->
+    <div class="detailedbg" id="detailed_bg">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 detailedbox" id="detailed_box">
+            <div class="col-lg-3">
+                <h1 id="t_myr"class="listingtitle">Potato</h1>
+            </div>
+            <div>
+            </div>
+            <hr>
+            <h6 class="dlistingtxt">Date Posted: <span id="dp_myr"></span></h6>
+            <h6 class="dlistingtxt">Quantity: <span id="q_myr"></span></h6>
+            <h6 class="dlistingtxt">Region: <span id="r_myr"></span></h6>
+            <h6 class="dlistingtxt">Price: &#x20B9;<span id="p_myr"></span></h6>  
+            <h6 class="dlistingtxt">Shipping Type: <span id="s_myr"></span></h6>
+            <button type="button" class="btn btn-primary"><i class='fa fa-phone'></i>Call</button>
+            <a href="http://localhost:5000/WhatsApp/{{ Name }}" class="btn btn-success"><i class='fa fa-whatsapp'></i>WhatsApp</a>
+            <button type="button" onclick="close_detailed()" class="btn btn-dark"><i class='fa fa-close'></i>Close</button>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    </div>
+    </div>
+
+
+
+<!-- Detailed Listing 1-->
+<div class="detailedbg1" id="detailed_bg1">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 detailedbox1" id="detailed_box1">
+            <div class="col-lg-3">
+                <h1 id="t" class="listingtitle">Potato</h1>
+            </div>
+            <div>
+            </div>
+            <hr>
+            <h6  class="dlistingtxt">Date Posted: <span id="dp"></span> </h6>
+            <h6  class="dlistingtxt">Quantity: <span id="q"></span> </h6>
+            <h6  class="dlistingtxt">Distance: <span id="d"></span> </h6>
+            <h6  class="dlistingtxt">Offered Price: &#x20B9;<span id="p"></span></h6>  
+            <h6  class="dlistingtxt">Shipping Type: <span id="s"></span> </h6>
+            <button type="button" class="btn btn-danger" onclick="window.location.href = 'http://localhost:5000/delete/'+current_view;"><i class='fa fa-trash'></i>Sold</button>
+            <button type="button" onclick="close_detailed1()" class="btn btn-dark"><i class='fa fa-close'></i>Close</button>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Post -->
+    <div class="postbg" id="post_bg">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 postbox" id="post_box"> 
+                <h1 class="logintitle">Post</h1>
+                <button onclick="close_post()" class="loginclse"><i class="fa fa-close"></i></button>
+                <hr>
+                <form method="POST">
+                    <label for="product" class="logintxt">Product: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="product" name="product" placeholder="Tomato" class="logininput" required>
+                    <label for="fname" class="logintxt">Shipping: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select  id="inputGroupSelect01" class="logininput" name="ShippingType">
+                        <option value="0" selected>Farmer-Shipping</option>
+                        <option value="1">Retailer-Shipping</option>
+                    </select>
+                    <label for="fname" class="logintxt">Organic: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <select  id="inputGroupSelect01" class="logininput" name="IsOrganic">
+                        <option value="0" selected>No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <label for="phone" class="logintxt">Quantity: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="tel" id="phone" name="Quantity" placeholder="12(in kgs)" class="logininput" required>
+                    <label for="phone" class="logintxt">Region: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="phone" name="Region" placeholder="Alandur" class="logininput" required> 
+                    <label for="phone" class="logintxt">Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="tel" id="phone" name="Price" placeholder="1000" class="logininput" pattern="[0-9]{4}" required> 
+                    <input type="submit" class="btn btn-success" value="Post">
+                </form>
+            </div>        
+            <div class="col-lg-4"></div> 
+        </div>
+        </div>
+    </div>
+        
+    
+    <div class="scrollbar scrollbar-primary">
+        <div class="force-overflow">
+    
+    <!-- Filter Bar -->
+    <div class="filter">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="post_req">Available Requests</h2>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <h2 class="post_req">My Goods</h2>
+            </div>
+        <div class="col-lg-2 add">
+            <button type="button" class="btn" onclick="open_post()">Add Item +</button>
+        </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Listings -->
+    <div class="listings">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {% for item in mydata %}
+            <div class="col-lg-12 listingbox">
+                <div class="col-lg-3">
+                    <h1 class="listingtitle">{{ item[0] }}</h1>
+                </div>
+                <div>
+                    {% if item[1]=="1" %}
+                    <img src="{{ url_for('static',filename= 'imgs/organic.png')}}" alt="Organic" class="organicimg">
+                    {% endif %}
+                </div>
+                <hr>
+                <h6 class="listingtxt">Date Posted: {{ item[2] }}</h6>
+                <h6 class="listingtxt">Quantity: {{ item[3] }}</h6>
+                <h6 class="listingtxt">Region: {{ item[4] }}</h6>
+                <h6 class="listingtxt">Price: &#x20B9;{{ item[5] }}</h6>
+                <h6 class="listingtxt">Shipping Type: {{ item[6] }}</h6>
+                <button type="button" class="btn open_btn" onclick="{{item[0]+item[3]+item[5]}}()">Open</button>
+                <script>
+                    function {{item[0]+item[3]+item[5]}}()
+                    {
+                        current_view = "{{ Name }}" + "_" + "{{item[0]}}" + "_"+"{{item[3]}}"+ "_" + "{{item[5]}}"
+                        document.getElementById("detailed_bg").style.zIndex=150;
+                        document.getElementById("detailed_box").style.zIndex=200;
+                        document.getElementById("t_myr").innerHTML ="{{ item[0] }}";
+                        document.getElementById("dp_myr").innerHTML = "{{ item[2] }}";
+                        document.getElementById("q_myr").innerHTML = "{{ item[3] }}";
+                        document.getElementById("r_myr").innerHTML = "{{ item[4] }}";
+                        document.getElementById("p_myr").innerHTML = "{{ item[5] }}";
+                        document.getElementById("s_myr").innerHTML = "{{ item[6] }}";
+                    }
+                </script>
+            </div>
+            {% endfor %}
+            </div>
+            
+
+
+
+                <!--Mygoods-->
+                <div class="col-lg-6">
+                {% for item in data %}
+                <div class="col-lg-12 listingbox">
+                    <div class="col-lg-3">
+                        <h1 class="listingtitle">{{ item[0] }}</h1>
+                    </div>
+                    <div>
+                        {% if item[1]=="1" %}
+                        <img src="{{ url_for('static',filename= 'imgs/organic.png')}}" alt="Organic" class="organicimg">
+                        {% endif %}
+                    </div>
+                    <hr>
+                    <h6 class="listingtxt">Date Posted: {{ item[2] }}</h6>
+                    <h6 class="listingtxt">Quantity: {{ item[3] }} </h6>
+                    <h6 class="listingtxt">Region: {{ item[4] }}</h6>
+                    <h6 class="listingtxt">Offered Price: &#x20B9;{{ item[5] }}</h6>
+                    <h6 class="listingtxt">Shipping Type: {{ item[6] }}</h6>
+                    <button type="button" class="btn open_btn" onclick="{{item[0]+item[3]+item[5]}}()">Open</button>
+                    <script>
+                        function {{item[0]+item[3]+item[5]}}()
+                        {
+                            current_view = "{{ Name }}" + "_" + "{{item[0]}}" + "_"+"{{item[3]}}"+ "_" + "{{item[5]}}"
+                            document.getElementById("detailed_bg1").style.zIndex=150;
+                            document.getElementById("detailed_box1").style.zIndex=200;
+                            document.getElementById("t").innerHTML ="{{ item[0] }}";
+                            document.getElementById("dp").innerHTML = "{{ item[2] }}";
+                            document.getElementById("q").innerHTML = "{{ item[3] }}";
+                            document.getElementById("d").innerHTML = "{{ item[4] }}";
+                            document.getElementById("p").innerHTML = "{{ item[5] }}";
+                            document.getElementById("s").innerHTML = "{{ item[6] }}";
+                        }
+                    </script>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Contact -->
+    <div class="contactbg">
+        <div class="container">
+            <div class="row contact">
+                <div class="col-lg-4 branding">
+                <img src="{{ url_for('static',filename= 'imgs/icon.png')}}" width="70" height="81.666" class="d-inline-block align-top" alt="" loading="lazy">
+                &nbsp;Gazda
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">Find us at:</p>
+                    <p class="address">
+                        #123, XYZ Street, ABC Colony, <br>Madhurovoyal, Chennai, <br>Tamilnadu, India <br>Pincode: 600094
+                    </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <p class="find">Contact us at:</p>
+                    <p class="address">
+                        Email: <a href = "mailto: abc@example.com">abc@example.com</a><br>
+                        Phone: <a href="tel:123-456-7890">123-456-7890</a><br>
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div></div>
+</body>
+</html>

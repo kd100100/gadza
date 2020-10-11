@@ -1,0 +1,58 @@
+farmers:
+    To add new farmer:
+        INSERT INTO `farmers`(`Name`, `PhoneNumber`, `Password`) VALUES ('Manoah',8610342197,'farmer@manoah')
+
+    To add new table for farmer:
+        CREATE TABLE `gazda`.`harsh` ( `GoodsName` VARCHAR(100) NOT NULL , `IsOrganic` VARCHAR(10) NOT NULL , `DatePosted` VARCHAR(10) NOT NULL , `Quantity` VARCHAR(10) NOT NULL , `Region` VARCHAR(100) NOT NULL , `OfferedPrice` VARCHAR(100) NOT NULL , `Shipping` VARCHAR(100) NOT NULL , `IsAvaliable` VARCHAR(10) NOT NULL )
+        
+    To search pass of retailer:
+        SELECT `Password` FROM `retailers` WHERE PhoneNumber = "9176850040" 
+
+    To add new good:
+        INSERT INTO `harsh`(`GoodsName`, `IsOrganic`, `DatePosted`, `Quantity`, `Region`, `OfferedPrice`, `Shipping`, `IsAvaliable`) VALUES ("Tomato","1","2020-09-30","50kg","Alandur","1000","Farmer","1")
+
+
+
+
+retailers:
+    To add new retailer:
+        INSERT INTO `retailers`(`Name`, `PhoneNumber`, `Password`) VALUES ('Manoah',8610342197,'farmer@manoah')
+
+    To add new table for retailer:
+        CREATE TABLE `gazda`.`harsh` ( `GoodsName` VARCHAR(100) NOT NULL , `IsOrganic` VARCHAR(10) NOT NULL , `DatePosted` VARCHAR(10) NOT NULL , `Quantity` VARCHAR(10) NOT NULL , `OfferedPrice` VARCHAR(100) NOT NULL , `Shipping` VARCHAR(100) NOT NULL , `IsAvaliable` VARCHAR(10) NOT NULL )
+
+    To search pass of retailer:
+        SELECT `Password` FROM `retailers` WHERE PhoneNumber = "9176850040" 
+
+     To add new good:
+        INSERT INTO `harsh`(`GoodsName`, `IsOrganic`, `DatePosted`, `Quantity`, `OfferedPrice`, `Shipping`, `IsAvaliable`) VALUES ("Tomato","1","2020-09-30","50kg","1000","Farmer","1")
+
+    To fetch all avalibale products:
+        SELECT `GoodsName`, `IsOrganic`, `DatePosted`, `Quantity`, `Region`, `OfferedPrice`, `Shipping` FROM `harsh`
+
+
+
+
+
+
+8489173783:
+    goods name
+    IsOrganic
+    date posted
+    quantity
+    region
+    offererd price
+    Shipping type
+    IsAvaliable
+    count() => to see trusted
+
+
+
+
+import datetime
+
+x = datetime.datetime.now()
+print(str(x).split()[0])
+
+print(x)
+    
