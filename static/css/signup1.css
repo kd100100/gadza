@@ -1,0 +1,90 @@
+body{
+    background: #eeeeee;
+    text-align: center;
+}
+
+.signupbg{
+    background: #03471b;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+.signup{
+    background: #eeeeee;
+    padding-bottom: 20px;
+}
+.signuptitle{
+    text-align: left;
+    color: white;
+    padding-left: 10px;
+}
+.farmer, .retailer{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.ifcase_success{
+    margin-top: 10px;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: #A3D921;
+}
+.ifcase_yellow{
+    margin-top: 10px;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: #f5f511;
+}
+.ifcase_blank{
+    margin-top: 10px;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: #eee;
+}
+.heading{
+    color: #03471b;
+}
+input{
+    margin-top: 8px;
+}
+form{
+    padding-top: 20px;
+}
+.signup .btn{
+    margin-top: 20px;
+}
+.farmer{
+    border-right: 1px solid #03471b;
+}
+
+
+/* Contact */
+.contactbg{
+	min-height: 180px;
+	background-color: #222222;
+	color: rgba(238, 238, 238, 0.9);
+}
+.branding{
+	font-size: 300%;
+	color: #eeeeee;
+	padding-top: 50px;
+}
+.find{
+	padding-top: 20px;
+	text-decoration: underline;
+	font-size: 130%;
+	text-align: left;
+}
+.address{
+	text-align: left;
+}
+.address a{
+	color: rgba(238, 238, 238, 0.9);
+}
+.fa{
+	font-size: 40px !important;
+	padding: 10px;
+}
+.fa:hover{
+	text-decoration: none;
+}

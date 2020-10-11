@@ -1,0 +1,98 @@
+body{
+	background: #eeeeee;
+	text-align: center;
+}
+.a{
+    padding-top: 60px;
+    background: #eeeeee;
+}
+
+/* Prediction Text */
+.p{
+    margin-top: 40px;
+    text-align: left;
+}
+.predicted_txt{
+    margin-top: 15px;
+    padding:20px;
+    font-size: 325%;
+}
+
+/* Prediction Input */
+.box{
+    margin: 50px;
+    margin-bottom: 30px;
+    padding: 25px 5px;
+    border: 0.5px solid #222222;
+    border-radius: 20px;
+}
+.box .title{
+    color: #03471b;
+}
+.box .input_txt{
+    font-size: 120%;
+}
+.box .input_area{
+    width: 150px;
+    background: transparent !important;
+    border: 0.5px solid black;
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+.box .aa{
+    padding-left: 10px;
+}
+.box .btn{
+    border-radius: 100px;
+    margin-top: 20px;
+}
+
+.down_title{
+    text-align: left;
+    padding: 20px;
+    padding-top: 0;
+    color: #03471;
+}
+.gold{
+    color: goldenrod;
+}
+
+
+/* Contact */
+.contactbg{
+	min-height: 180px;
+	background-color: #222222;
+	color: rgba(238, 238, 238, 0.9);
+}
+.branding{
+	font-size: 300%;
+	color: #eeeeee;
+	padding-top: 50px;
+}
+.find{
+	padding-top: 20px;
+	text-decoration: underline;
+	font-size: 130%;
+	text-align: left;
+}
+.address{
+	text-align: left;
+}
+.address a{
+	color: rgba(238, 238, 238, 0.9);
+}
+.fa{
+	font-size: 40px !important;
+	padding: 10px;
+}
+.fa:hover{
+	text-decoration: none;
+}
+
+
+.navbar-light .navbar-nav .nav-link{
+    opacity: 1 !important;
+    color: #222222 !important;
+}

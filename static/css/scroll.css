@@ -1,0 +1,23 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;x;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #A3D921 0%, #03471b 100%);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #A3D921 0%, #03471b 100%);
+  }
+    /* body{
+      overflow: hidden;
+  } */

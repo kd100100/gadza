@@ -1,0 +1,199 @@
+body{
+	background: #eeeeee;
+	text-align: center;
+}
+
+/* Post */
+.postbg{
+    position: fixed;
+    z-index: -150;
+    background: rgba(0, 0, 0, 0.85);
+    height: 100vh;
+    width: 100%;
+}
+.postbox{
+    z-index: -200;
+    margin-top: 25vh;
+    min-height: 100px;
+    background: #eeeeee;
+    border-radius: 10px;
+}
+/* Detailed Listing */
+.detailedbg{
+    position: fixed;
+    z-index: -150;
+    background: rgba(0, 0, 0, 0.85);
+    height: 100vh;
+    width: 100%;
+}
+.detailedbox{
+    z-index: -200;
+    margin-top: 25vh;
+    min-height: 100px;
+    background: #eeeeee;
+	border-radius: 10px;
+	padding-top: 20px;
+}
+.detailedbg1{
+    position: fixed;
+    z-index: -150;
+    background: rgba(0, 0, 0, 0.85);
+    height: 100vh;
+    width: 100%;
+}
+.detailedbox1{
+    z-index: -200;
+    margin-top: 25vh;
+    min-height: 100px;
+    background: #eeeeee;
+	border-radius: 10px;
+	padding-top: 20px;
+}
+.dlistingtxt{
+	text-align: left;
+	padding-left: 5%;
+}
+.dorganicimg{
+	position: absolute;
+	top: 35px;
+	right: 25px;
+	width: 190px;
+}
+.dtrustedimg{
+	position: absolute;
+	right: 50px;
+	bottom: 120px;
+	width: 120px;
+}
+.detailedbox .btn, .detailedbox1 .btn{
+	width: 30%;
+	border-radius: 200px;
+	margin-top: 40px;
+}
+.detailedbox .fa, .detailedbox1 .fa{
+	font-size: 20px !important;
+}
+
+/* Items */
+.items{
+	padding-top: 85px;
+	padding-bottom: 20px;
+	background-color: #03471b;
+	color: #eeeeee;
+}
+.filter .add .btn{
+	background: #A3D921;
+	width: 150px;
+	font-weight: 500;
+	border-radius: 25px;
+}
+.filter .add .btn:hover{
+	box-shadow: 0 0 10px #A3D921,0 0 20px #A3D921;
+}
+
+
+/* Filter Bar */
+.post_req{
+	padding-bottom: 10px;
+}
+.filter{
+	padding-top: 80px;
+	background-color: #03471b;
+	color: #eeeeee;
+	padding-bottom: 5px;
+}
+.dd1{
+	margin: 0 !important;
+}
+.filter p{
+	text-align: left;
+}
+.filter .btn{
+	margin: 0 !important;
+	border-bottom-left-radius: 0cm;
+	border-top-left-radius: 0;
+	background: #E9ECEF;
+}
+.filter .btn{
+	width: 100px;
+	text-align: center !important;
+}
+
+/* Listings */
+.listings{
+	background: #eeeeee;
+	padding-bottom: 50px;
+	padding-top: 25px;
+}
+.listingbox{
+	margin-top: 25px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding-bottom: 20px;
+}
+.listingtitle{
+	color: #03471b;
+	padding-top: 5px;
+}
+.organicimg{
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	width: 190px;
+}
+.listingtxt{
+	text-align: left;
+	padding-left: 20px;
+}
+.trustedimg{
+	position: absolute;
+	right: 60px;
+	bottom: 60px;
+	width: 100px;
+}
+.open_btn{
+	position: absolute;
+	bottom: 0;
+	right: 40px;
+	background: #03471b;
+	border-radius: 100px;
+	color: #eeeeee;
+}
+.open_btn:hover{
+	color: #eeeeee;
+	box-shadow: 0 0 10px #A3D921,0 0 20px #A3D921;
+}
+
+
+
+
+/* Contact */
+.contactbg{
+	min-height: 180px;
+	background-color: #222222;
+	color: rgba(238, 238, 238, 0.9);
+}
+.branding{
+	font-size: 300%;
+	color: #eeeeee;
+	padding-top: 50px;
+}
+.find{
+	padding-top: 20px;
+	text-decoration: underline;
+	font-size: 130%;
+	text-align: left;
+}
+.address{
+	text-align: left;
+}
+.address a{
+	color: rgba(238, 238, 238, 0.9);
+}
+.fa{
+	font-size: 40px !important;
+	padding: 10px;
+}
+.fa:hover{
+	text-decoration: none;
+}
